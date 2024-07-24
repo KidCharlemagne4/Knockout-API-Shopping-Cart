@@ -1,0 +1,104 @@
+body { font-family: arial; font-size: 14px; }
+
+.liveExample { padding: 1em 1em 1em 1.5em; background-color: #333; border: 1px solid #CCC; max-width: 655px; position: relative }
+.liveExample input { font-family: Arial; }
+.liveExample b { font-weight: bold; }
+.liveExample p { margin-top: 0.9em; margin-bottom: 0.9em; }
+.liveExample select[multiple] { width: 100%; height: 8em; }
+.liveExample h2 { margin-top: 0.4em; font-weight: bold; font-size: 1.2em; }
+
+.liveExample th { text-align: left; font-weight: bold; }
+.liveExample .price { text-align: right; padding-right: 2em; }
+.liveExample .grandTotal { border-top: 1px solid silver; padding-top: 0.5em; font-size: 1.2em; }
+.liveExample .grandTotal SPAN { font-weight: bold; }
+
+.liveExample table, .liveExample td, .liveExample th { padding: 0.2em; border-width: 0; margin: 0; vertical-align: top; }
+.liveExample td input, .liveExample td select { width: 8em; }
+.liveExample td.quantity input { width: 4em; }
+.liveExample td select { height: 1.8em; white-space: nowrap; }
+
+li { list-style-type: disc; margin-left: 20px; }
+
+body {
+    background: #222;
+    color: white;
+    padding: 50px 0 0 50px;
+}
+
+.liveExample {
+    border: 1px solid #666;
+}
+
+a {
+    color: palevioletred;
+}
+
+.grandTotal {
+    color: palegreen
+}
+
+.price span {
+    color: palegoldenrod
+}
+
+.btn {
+    margin-bottom: 15px;
+    padding: 8px 24px;
+    font-weight: bold;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: opacity .3s;
+}
+
+.btn:hover {
+    opacity: .8;
+}
+
+#fetch {
+    background: green;
+    margin-right: 5px;
+}
+
+#fetch:not(:disabled) {
+    animation: pulse 2s infinite;
+}
+
+#fetch:disabled {
+    opacity: .2;
+    cursor: not-allowed;
+}
+
+#reload {
+    background: crimson
+}
+
+.btn-primary {
+    background-color: #666;
+}
+
+.btn-secondary {
+    background-color: #666;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.loader{
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: red;
+}

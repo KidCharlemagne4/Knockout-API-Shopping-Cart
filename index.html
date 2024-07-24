@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knockout API Shopping Cart</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type='text/javascript' src="/ko.js" defer></script>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body data-bind="init">
+    <button onclick="startApp()" id="fetch" class="btn">Fetch Data</button>
+    <button onclick="location.reload();" id="reload" class="btn">Reset</button>
+    <div class='liveExample'>
+        <table width='100%'>
+            <thead>
+                <tr>
+                    <th width='25%'>Category</th>
+                    <th width='25%'>Product</th>
+                    <th class='price' width='15%'>Price</th>
+                    <th class='quantity' width='10%'>Quantity</th>
+                    <th class='price' width='15%'>Subtotal</th>
+                    <th width='10%'> </th>
+                </tr>
+            </thead>
+            <tbody data-bind='foreach: lines'>
+                <tr>
+                    <td>
+                        <select
+                            data-bind='options: sampleProductCategories, optionsText: "name", optionsCaption: "Select...", value: category'>
+                        </select>
+                    </td>
+                    <td data-bind="with: category">
+                        <select
+                            data-bind='options: products, optionsText: "title", optionsCaption: "Select...", value: $parent.product'>
+                        </select>
+                    </td>
+                    <td class='price' data-bind='with: product'>
+                        <span data-bind='text: formatCurrency(price)'> </span>
+                    </td>
+                    <td class='quantity'>
+                        <input data-bind='visible: product, value: quantity, valueUpdate: "afterkeydown"' />
+                    </td>
+                    <td class='price'>
+                        <span data-bind='visible: product, text: formatCurrency(subtotal())'> </span>
+                    </td>
+                    <td>
+                        <a href='#' data-bind='click: $parent.removeLine'>Remove</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class='grandTotal'>
+            Total value: <span data-bind='text: formatCurrency(grandTotal())'> </span>
+        </p>
+        <button class="btn btn-primary" data-bind='click: addLine'>Add product</button>
+        <button class="btn btn-secondary" data-bind='click: save'>Submit order</button>
+        <div class="loader"></div>
+    </div>
+</body>
+</html>
