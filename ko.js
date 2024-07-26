@@ -24,7 +24,7 @@ var startApp = async function () {
             $(".loader").css("width", i + "%");
         }
         $(".data").addClass("done");
-        $(".loader").css("background-color", "green");
+        $(".loader").css("background-color", "lime");
 
         return result;
     }
